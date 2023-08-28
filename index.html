@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            margin-left: 20px;
+        }
+        body{
+            text-align: center;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            background-color: bisque;
+        }
+        button{
+            margin-left: 40%;
+            margin-right: 40%;
+            margin-top: 20px;
+            padding: 20px;
+
+        }
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Random Images:</h1>
+<p>ระบบจะสุ่มเลขระหว่าง 1 -6 </p>
+<br>
+<div class="imgR">
+<img id="image1" src="0.png" alt="Image 1">
+<img id="image2" src="0.png" alt="Image 2">
+<img id="image3" src="0.png" alt="Image 3">
+</div>
+
+<button id="Button">Random</button>
+
+
+<script>
+const images = [
+  "1.png",
+  "2.png",
+  "3.png",
+  "4.png",
+  "5.png",
+  "6.png",
+];
+
+
+document.getElementById("Button").addEventListener("click", function() {
+  document.getElementById("image1").src = getRandomImage(images);
+  document.getElementById("image2").src = getRandomImage(images);
+  document.getElementById("image3").src = getRandomImage(images);
+  document.getElementById("image4").src = getRandomImage(images);
+  document.getElementById("image5").src = getRandomImage(images);
+  document.getElementById("image6").src = getRandomImage(images);
+});
+
+
+function getRandomImage(imageList) {
+  const randomIndex = Math.floor(Math.random() * imageList.length);
+  return imageList[randomIndex];
+}
+</script>
+
+</body>
+</html>
